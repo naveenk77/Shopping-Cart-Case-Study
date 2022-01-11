@@ -1,0 +1,42 @@
+li{
+    float: left;
+    display:block;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration:underline;
+    overflow: hidden;
+    background-color: rgb(127, 180, 194);
+    height: auto;
+}
+li:hover
+{
+    
+ background-color: rgb(14, 13, 13);
+    color: rgb(6, 139, 216);
+    text-align: center;
+    padding: 15px;
+    height: auto;
+} 
+
+nav{
+    background-color: rgb(49, 17, 85);
+    height: auto;
+}
+h2{
+    padding-left: 15cm;
+    background-color: darkorchid;
+    
+    color: black;
+}
+strong{
+color: rgb(209, 18, 18);
+padding-bottom: 2cm;
+}
+td{
+    font-weight: 700;
+}
+
+button{
+    background-color: rgb(158, 39, 173);
+    color: aliceblue;
+}

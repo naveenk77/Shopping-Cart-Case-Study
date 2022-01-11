@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.nav-item{
+    padding: 5px;
+}
+
+.content{
+    margin-top: 80px;
+}   
+
+button{
+    margin: 3px;
+}
+
+input:valid{
+    border: 1px solid green;
+}
+
+input{
+    margin: 3px;
+}
+
+.badge{
+    position: relative;
+    right: 10px;
+    bottom: 5px;
+    font-size: 12px;
+}

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-dark text-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Simple Shopping Cart</a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">{{name}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="table">
+<h1 *ngIf="orderId==-1">Order Successful</h1>
+<h3><strong>Order Id:</strong> {{order.id}}</h3>
+<table class="table container">
+    <tr>
+        <th></th>
+        <th>Item</th>
+        <th>Item Total</th>
+        <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td><img src="{{item.image}}" height="100px"></td>
+        <td>{{item.prodName}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.quantity}}</td>
+    </tr>
+    <tr>
+        <td><strong>Cost:</strong> {{order.amount}}</td>
+        <td><strong>Order Placed On:</strong>{{order.date}}</td>
+        <td><strong>Satus:</strong> {{order.status}}</td>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,114 @@
+<nav class="navbar navbar-dark  text-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Simple Shopping Cart</a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/cart" class="nav-link">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/register">Sign up</a>
+          </li>
+        </ul>
+</div>
+   </div>
+</nav>
+
+<div class="content">
+  
+    <div class="container col-5">
+    
+      <form [formGroup]="signupForm">    
+       <h1> <marquee direction=right> REGISTER HERE</marquee>   </h1> 
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+       
+          <label>Name *</label>
+          <input type="text" formControlName="name" class="form-control" [class.is-invalid]="signupForm.controls.name.invalid && signupForm.controls.name.touched">
+     
+          <label>Username *</label>
+          <input type="text" formControlName="username" class="form-control" [class.is-invalid]="signupForm.controls.username.invalid && signupForm.controls.username.touched">
+         
+          <div *ngIf="signupForm.controls.username.invalid && signupForm.controls.username.touched" class="text-danger">
+            <small *ngIf="signupForm.get('username')!.errors?.required">Username cannot be empty </small>
+            <small *ngIf="signupForm.get('username')!.errors?.minlength">Username cannot be less than 5 characters</small>
+          </div>
+        
+          <label>Password *</label>
+          <input type="password" formControlName="password" class="form-control" [class.is-invalid]="signupForm.controls.password.invalid && signupForm.controls.password.touched">
+          <div *ngIf="signupForm.controls.password.invalid && signupForm.controls.password.touched" class="text-danger">
+            <small *ngIf="signupForm.get('password')!.errors?.required">Password Cannot be empty</small>
+            <small *ngIf="signupForm.get('password')!.errors?.minlength">Password cannot be less than 8 characters</small>
+          </div>
+
+          <label>Confirm Password *</label>
+          <input type="password" formControlName="cpassword" class="form-control" [class.is-invalid]="signupForm.controls.cpassword.invalid && signupForm.controls.cpassword.touched">
+          
+          <label>Email *</label>
+          <input type="text" formControlName="email" class="form-control" [class.is-invalid]="signupForm.controls.email.invalid && signupForm.controls.email.touched">
+       
+        
+
+       
+        
+          
+       
+        
+          <label>Contact Number *</label>
+          <input type="number" formControlName="number" class="form-control" [class.is-invalid]="signupForm.controls.number.invalid && signupForm.controls.number.touched">
+       <br>
+        
+          <label>Gender: </label> 
+          <input type="radio" formControlName="gender" id="male" value="Male"><label for="male">Male</label>
+          <input type="radio" formControlName="gender" id="female" value="Female"><label for="female">Female</label>
+       
+      </form>
+      <form [formGroup]="address">
+        
+          <label>House</label>
+          <input type="text" formControlName="house" class="form-control" [class.is-invalid]="address.controls.house.invalid && address.controls.house.touched">
+       
+        
+          <label>Street</label>
+          <input type="text" formControlName="street" class="form-control" [class.is-invalid]="address.controls.street.invalid && address.controls.street.touched">
+       
+        
+          <label>Area</label>
+          <input type="text" formControlName="area" class="form-control" [class.is-invalid]="address.controls.area.invalid && address.controls.area.touched">
+       
+        
+          <label>City</label>
+          <input type="text" formControlName="city" class="form-control" [class.is-invalid]="address.controls.city.invalid && address.controls.city.touched">
+       
+        
+          <label>State</label>
+          <input type="text" formControlName="state" class="form-control" [class.is-invalid]="address.controls.state.invalid && address.controls.state.touched">
+       
+        
+          <label>Country</label>
+          <input type="text" formControlName="country" class="form-control" [class.is-invalid]="address.controls.country.invalid && address.controls.country.touched">
+       <br>
+    
+      
+      </form><br><br>
+ 
+
+      <h5>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</h5>
+      
+      <button [disabled]="!signupForm.valid" class=" btn-success" (click)="register()">Register</button>
+ 
+      
+       <div class="form-group">
+        <p> Already have an account? <a routerLink="/login">Sign in</a>.</p>
+     
+        </div>
+     
+  
+   
+</div>

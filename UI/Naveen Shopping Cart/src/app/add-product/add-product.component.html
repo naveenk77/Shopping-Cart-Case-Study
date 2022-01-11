@@ -1,0 +1,62 @@
+<nav class="navbar navbar-dark  text-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Simple Shopping Cart</a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">{{name}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="content">
+<div class="container col-5">
+    <h1>Add Product</h1>
+    <form [formGroup]="productForm">
+        <div class="form-group">
+            <label>Name</label>
+            <input [class.is-invalid]="productForm.controls.name.invalid && productForm.controls.name.touched" formControlName="name" type="text" class="form-control" name="name">
+            <div *ngIf="productForm.controls.name.invalid && productForm.controls.name.touched">
+                <small *ngIf="productForm.get('name')!.errors?.required" class="text-danger">Name cannot be empty</small>
+                <small *ngIf="productForm.get('name')!.errors?.minlength" class="text-danger">Name must be atleast 3 letters long</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Category</label>
+            <select [class.is-invalid]="productForm.controls.category.invalid && productForm.controls.category.touched" formControlName="category" class="form-control" name="category">
+                <option selected value="">Select Category</option>
+                <option *ngFor="let cat of categories">{{cat}}</option>
+            </select>
+            <small *ngIf="productForm.controls.category.invalid && productForm.controls.category.touched" class="text-danger">Please select a category</small>
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input [class.is-invalid]="productForm.controls.price.invalid && productForm.controls.price.touched" formControlName="price" type="number" class="form-control" name="price">
+            <small *ngIf="productForm.controls.price.invalid && productForm.controls.price.touched" class="text-danger">Price cannot be empty</small>
+        </div>
+        <div class="form-group">
+            <label>Image</label>
+            <input (change)="onFileUpload($event)" [class.is-invalid]="productForm.controls.imagesource.invalid && productForm.controls.imagesource.touched" formControlName="imagesource" type="file" class="form-control" name="image">
+            <small *ngIf="productForm.controls.imagesource.invalid && productForm.controls.imagesource.touched" class="text-danger">Image cannot be empty</small>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea formControlName="description" class="form-control" name="description"></textarea>
+        </div>
+        <div class="form-group">
+            <button [disabled]="!productForm.valid" class="btn btn-dark" type="submit" (click)=addNewProduct()>Submit</button>
+        </div>
+    </form>
+</div>
+</div>

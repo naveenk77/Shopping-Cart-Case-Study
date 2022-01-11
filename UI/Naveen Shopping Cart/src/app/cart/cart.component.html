@@ -1,0 +1,49 @@
+<nav class="navbar navbar-dark  text-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Simple Shopping Cart</a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">{{name}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="content">
+<table class="table container"  *ngIf="itemsExist">
+    <tr>
+        <th></th>
+        <th>Item</th>
+        <th>Item Total</th>
+        <th>Item  Quantity </th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td><img src="{{item.image}}" height="150px"  ></td>
+        <td>{{item.prodName}}</td>
+        <td>{{item.price}}</td>
+        <td>
+            <a><button (click)="addToCart(item)" class="btn btn-outline-success">+</button></a>
+                    {{item.quantity}}
+            <a><button (click)="removeFromCart(item)" class="btn btn-outline-danger">-</button></a>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <h3> Total: {{cart.total}}</h3>
+        <td><a><button  class="GFG" onclick="window.location.href = 'https://paytm.me/O7-SV7R'" class="btn btn-success"(click)="checkOut()">Buynow</button></a></td>
+    </tr>
+</table>
+<h1 *ngIf="!itemsExist">Cart Empty..Please Add Products And Start Shopping</h1>
+</div>

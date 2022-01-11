@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark  text-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Simple Shopping Cart</a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/profile">{{name}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="content">
+  <h2>Previous Orders</h2>
+    <table class="table container">
+        <tr *ngFor="let order of orders">
+            <td><strong>Order Id:</strong>{{order.id}}</td>
+            <td><strong>Order Placed On:</strong>{{order.date}}</td>
+            <td><strong>Total Amount :</strong>{{order.amount}}</td>
+            <td><strong>Order Status:</strong>{{order.status}}</td>
+            <td><button routerLink="/order/{{order.id}}" class="btn btn-info">View Order</button></td>
+        </tr>
+    </table>
+</div>

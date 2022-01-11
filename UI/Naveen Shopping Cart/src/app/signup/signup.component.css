@@ -1,0 +1,122 @@
+li{
+    float: left;
+    display:block;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration:underline;
+    overflow: hidden;
+    background-color: rgb(127, 180, 194);
+    height: auto;
+}
+li:hover
+{
+    
+ background-color: rgb(14, 13, 13);
+    color: rgb(6, 139, 216);
+    text-align: center;
+    padding: 15px;
+    height: auto;
+} 
+
+nav{
+    background-color: rgb(49, 17, 85);
+   
+}
+  
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #2331b1;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+  
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+h1{
+    padding-top: 2cm;
+    background-color: #36eef4;
+    font-weight: 500;
+    
+  }
+ 
+  p{
+      font-weight: 800;
+      color: #dd0c0cd3;
+      padding-left: 3.5cm;
+  }
+  h5{
+      font-weight: 500;
+  }
+  .content{
+      background-color: rgba(65, 115, 134, 0.24);
+  }
+button{
+    background-color: rgb(42, 75, 165);
+}
+small{
+    font-weight: 800;
+
+}
+label{
+    font-weight: 600;
+}

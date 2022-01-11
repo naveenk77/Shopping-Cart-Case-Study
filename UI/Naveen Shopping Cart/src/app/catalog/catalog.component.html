@@ -1,0 +1,53 @@
+<nav class="navbar navbar-dark  text-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Simple Shopping Cart</a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <!--- <h1 class="col-lg-9 clo-sm-12 mt-5" class="search">
+            <input type="text" placeholder="search" name="name" [(ngModel)]="name" (ngModelChange)="findByName()">
+          </h1> --->
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/Home">Home</a>
+          </li>
+         
+          <li class="nav-item">
+            <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
+          </li>
+          <li *ngIf="isLoggedIn" class="nav-item">
+            <a class="nav-link" routerLink="/profile">{{name}}</a>
+          </li>
+          <li *ngIf="!isLoggedIn" class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li *ngIf="isLoggedIn" class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+          <li *ngIf="!isLoggedIn" class="nav-item">
+            <a class="nav-link" routerLink="/register">Sign up</a>
+          </li>
+          <li *ngIf="admin" class="nav-item">
+            <a class="nav-link" routerLink="/add-product">Add Product</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="content">
+<div class="row row-cols-5">
+    <div class="col" *ngFor="let product of products">
+        <div class="card">
+            <a routerLink='/product/{{product.id}}'>
+                <div><img class="card-img-top cat-img" src="{{product.image}}" height="250px"></div>
+            </a>
+            <div class="card-body">
+                <a routerLink='/product/{{product.id}}'><h4 class=" card-title"><q>{{product.name}}</q></h4></a>
+                <p>{{"Description :- "+product.description.slice(0,50)+"..."}}</p>
+                <b>{{"Price:"+product.price}}</b><br>
+                <button *ngIf="admin" class="btn btn-success" routerLink="/edit-product/{{product.id}}">Edit</button>
+                <button *ngIf="admin" class="btn btn-danger" (click)="delete(product)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

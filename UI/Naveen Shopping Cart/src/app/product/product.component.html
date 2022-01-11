@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark  text-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Simple Shopping Cart</a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
+          </li>
+          <li *ngIf="isLoggedIn" class="nav-item">
+            <a class="nav-link" routerLink="/profile">{{name}}</a>
+          </li>
+          <li *ngIf="!isLoggedIn" class="nav-item">
+            <a class="nav-link" routerLink="/login">Log in</a>
+          </li>
+          <li *ngIf="isLoggedIn" class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+          </li>
+          <li *ngIf="!isLoggedIn" class="nav-item">
+            <a class="nav-link" routerLink="/register">Sign up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="content">
+<div class="row">
+    <div class="col-5 text-center">
+        <img src="{{product.image}}" height="300px"><br><br>
+        <button class="btn btn-warning" (click)="addToCart()">Add To Cart</button>
+        <input type="button" class="btn btn-success" value="Buy Now">
+    </div>
+    <div class="col-4" >
+        <h2>{{product.name}}</h2>
+        <h4>Price:- {{product.price}} Rs</h4>
+        <p><strong>Description:</strong> {{product.description}}</p>
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,105 @@
+
+
+.row{
+    margin: 0 10px;
+    
+}
+
+.col{
+    padding: 5px 5px;
+    padding-inline-end: 3px;
+    padding-inline-start: 5px;
+   
+  
+  
+}
+
+.card{
+    height: 540px;
+    width: auto;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    background-color: rgb(95, 203, 230);
+    
+}
+
+.card:hover{
+    border: 3px solid rgb(15, 15, 15);
+    border-radius: 10px;
+}
+
+.cat-img{ /* Css For image*/
+    border-bottom: 1px solid black;
+    border-radius: auto;
+   height: 300px;
+   width: 255px;
+   background-color: rgb(110, 189, 209);
+   
+
+       
+}
+
+a{  /* Css For header names like home,car,sign in...*/
+
+    
+    font-weight:lighter;
+   font-weight: 500;
+   
+    
+}
+b,p{ 
+    color: rgb(12, 12, 12);
+    font-weight: bolder;
+    text-align:left;
+   
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+   
+    
+    
+}
+q{                
+    color: rgb(8, 8, 8);
+    font-weight:normal;
+    text-align:left;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    background-color: rgb(171, 28, 196);
+    
+} 
+
+li{
+    float: left;
+    display:block;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration:underline;
+    overflow: hidden;
+    background-color: rgb(127, 180, 194);
+    height: auto;
+}
+li:hover
+{
+    
+ background-color: rgb(14, 13, 13);
+    color: rgb(6, 139, 216);
+    text-align: center;
+    padding: 15px;
+    height: auto;
+} 
+
+nav{
+    background-color: rgb(49, 17, 85);
+    height: auto;
+}
+img{
+  
+}
+  
+ 
+  
