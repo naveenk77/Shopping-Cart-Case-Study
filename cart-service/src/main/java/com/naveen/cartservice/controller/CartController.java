@@ -51,12 +51,12 @@ public class CartController {
 		return carts.get(0);
 	}
 	
-	@GetMapping("/items/{userId}")
+	@GetMapping("/items/{userId}")// retrives user cart item details
 	public Collection<Item> getItems(@PathVariable("userId") int userId){
 		return getCart(userId).getItems().values();
 	}
 	
-	@PostMapping("/create/{userId}")
+	@PostMapping("/create/{userId}") //creates cart for thee user
 	public void createCart(@PathVariable("userId") int userId) {
 		IdGenerator idGen= idRepo.findById("cartId").get();
 		int id= idGen.getSeq();
@@ -87,7 +87,7 @@ public class CartController {
 		items.values().forEach(item -> cart.setTotal(cart.getTotal()+item.getPrice()));
 		cartRepo.save(cart);
 		return cart;
-	}
+	} //
 	
 	@PutMapping("/remove/{userId}/{prodId}")
 	@CircuitBreaker(name = "removeFromCart", fallbackMethod="cartFallBack")
