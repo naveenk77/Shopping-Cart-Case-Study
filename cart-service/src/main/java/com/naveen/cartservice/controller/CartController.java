@@ -123,7 +123,7 @@ public class CartController {
 	}
 	
 	
-	@GetMapping("")
+	@GetMapping("") //returns alll cart orders
 	public List<Cart> getAllCarts(){
 		List<Cart> carts= new ArrayList<>();
 		cartRepo.findAll().stream().forEach(carts::add);
