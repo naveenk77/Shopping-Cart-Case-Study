@@ -40,7 +40,7 @@ public class CartController {
 	@Autowired
 	RestTemplate restTemplate;
 	
-	@GetMapping("/{userId}")
+	@GetMapping("/{userId}") //prints user cart details
 	public Cart getCart(@PathVariable("userId") int userId) {
 		List<Cart> carts = new ArrayList<>();
 		cartRepo.findAll().stream().forEach(cart -> {
